@@ -6,7 +6,7 @@ namespace quicksilver
     extern SDL_Window* window;
     extern SDL_Renderer* renderer;
 
-    extern SDL_Event* event;
+    extern SDL_Event event;
 
     int core_init();
     bool core_is_running;

@@ -3,7 +3,7 @@
 SDL_Window* quicksilver::window = nullptr;
 SDL_Renderer* quicksilver::renderer = nullptr;
 
-SDL_Event* quicksilver::event;
+SDL_Event quicksilver::event;
 
 void log_error() {
     SDL_LogError(SDL_LOG_PRIORITY_ERROR, SDL_GetError());
@@ -32,8 +32,8 @@ int quicksilver::core_init() {
 }
 
 void quicksilver::core_events() {
-    while (SDL_PollEvent(event)) {
-        if (event->type == SDL_EVENT_QUIT) {
+    while (SDL_PollEvent(&event)) {
+        if (event.type == SDL_EVENT_QUIT) {
             core_is_running = false;
         }
     }
