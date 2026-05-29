@@ -9,7 +9,7 @@ namespace quicksilver
     extern SDL_Event event;
 
     int core_init();
-    bool core_is_running;
+    extern bool core_is_running;
     void core_events();
     void core_quit();
     

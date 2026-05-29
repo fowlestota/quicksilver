@@ -5,8 +5,10 @@ SDL_Renderer* quicksilver::renderer = nullptr;
 
 SDL_Event quicksilver::event;
 
+bool quicksilver::core_is_running = false;
+
 void log_error() {
-    SDL_LogError(SDL_LOG_PRIORITY_ERROR, SDL_GetError());
+    SDL_LogError(SDL_LOG_CATEGORY_ERROR, "%s", SDL_GetError());
 }
 
 int quicksilver::core_init() {
