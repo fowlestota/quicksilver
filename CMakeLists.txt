@@ -25,6 +25,11 @@ FetchContent_MakeAvailable(SDL3)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
 add_library(quicksilver SHARED src/quicksilver.cpp)
+
+target_include_directories(quicksilver PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
 target_link_libraries(quicksilver PRIVATE SDL3::SDL3)
 
 set_target_properties(quicksilver PROPERTIES
